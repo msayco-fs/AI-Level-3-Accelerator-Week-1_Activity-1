@@ -1,0 +1,61 @@
+<section id="about" class="section about-section">
+  <div class="container about-inner">
+    <div class="about-visual">
+      <div class="visual-frame">
+        <div class="frame-blob"></div>
+        <div class="field-rows" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="bowl">
+          <div class="bowl-rim"></div>
+          <div class="bowl-matcha"></div>
+          <div class="whisk"></div>
+        </div>
+      </div>
+      <div class="badge-float">
+        <strong>Since</strong>
+        <span>2019</span>
+      </div>
+    </div>
+
+    <div class="about-copy">
+      <span class="section-tag">Our Story</span>
+      <h2 class="section-heading">Grown With Care, Baked With Warmth</h2>
+      <p class="section-sub">
+        Matcharap began with one simple idea: bring the calm ritual of whisked matcha together
+        with the comfort of a neighborhood bakery. Every leaf is traceable to the farmers who
+        grow it, and every pastry is shaped by hand before sunrise.
+      </p>
+      <p class="about-paragraph">
+        We partner directly with family-run tea gardens in Uji and Nishio, paying above fair-trade
+        rates so the next generation keeps farming matcha the traditional way. Back home, our
+        bakers turn that same care into croissants, mochi donuts, and cakes — using local dairy,
+        seasonal fruit, and zero shortcuts.
+      </p>
+
+      <div class="value-list">
+        @for (value of values; track value.title) {
+          <div class="value-item">
+            <span class="value-icon" [attr.data-icon]="value.icon" aria-hidden="true">
+              @switch (value.icon) {
+                @case ('leaf') {
+                  <svg viewBox="0 0 24 24"><path d="M12 3c-4 3-7 6-7 10a7 7 0 0 0 14 0c0-4-3-7-7-10Z" fill="var(--matcha)"/><path d="M12 7v11" stroke="var(--cream)" stroke-width="1.4" stroke-linecap="round"/></svg>
+                }
+                @case ('heart') {
+                  <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.4-9A5 5 0 0 1 12 6a5 5 0 0 1 9.4 5c-2.4 4.6-9.4 9-9.4 9Z" fill="var(--espresso)"/></svg>
+                }
+                @case ('people') {
+                  <svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3" fill="var(--matcha)"/><circle cx="16" cy="8" r="3" fill="var(--beige-dark)"/><path d="M2 20c0-3.5 2.7-6 6-6s6 2.5 6 6M10 20c0-3.5 2.7-6 6-6s6 2.5 6 6" fill="none" stroke="var(--espresso)" stroke-width="1.6" stroke-linecap="round"/></svg>
+                }
+              }
+            </span>
+            <div>
+              <h3>{{ value.title }}</h3>
+              <p>{{ value.text }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

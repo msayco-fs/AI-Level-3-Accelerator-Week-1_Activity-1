@@ -1,0 +1,239 @@
+/* ==========================================================================
+   Matcharap — Global Design System
+   ========================================================================== */
+
+:root {
+  /* Brand palette */
+  --matcha: #667744;
+  --matcha-dark: #4c5a32;
+  --matcha-light: #869a63;
+  --cream: #f5e8d9;
+  --cream-soft: #faf3e9;
+  --beige: #eadab7;
+  --beige-dark: #ddc699;
+  --espresso: #502c18;
+  --espresso-soft: #7a4b30;
+  --white: #fffbf5;
+
+  /* Semantic */
+  --bg: var(--cream);
+  --surface: var(--white);
+  --text: var(--espresso);
+  --text-soft: #7a5c47;
+  --accent: var(--matcha);
+
+  /* Typography */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Quicksand', 'Segoe UI', sans-serif;
+
+  /* Layout */
+  --max-width: 1180px;
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --shadow-soft: 0 20px 45px -20px rgba(80, 44, 24, 0.25);
+  --shadow-card: 0 12px 30px -14px rgba(80, 44, 24, 0.28);
+  --header-h: 76px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  color: var(--espresso);
+  margin: 0 0 0.5em;
+  line-height: 1.15;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 96px 0;
+
+  @media (max-width: 720px) {
+    padding: 64px 0;
+  }
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--matcha);
+  background: rgba(102, 119, 68, 0.1);
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+.section-heading {
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  max-width: 620px;
+}
+
+.section-sub {
+  color: var(--text-soft);
+  font-size: 1.05rem;
+  max-width: 560px;
+}
+
+.section-head {
+  margin-bottom: 48px;
+}
+
+.section-head.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-head.center .section-heading,
+.section-head.center .section-sub {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  padding: 14px 30px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: var(--matcha);
+  color: var(--white);
+  box-shadow: 0 14px 30px -10px rgba(102, 119, 68, 0.55);
+}
+
+.btn-primary:hover {
+  background: var(--matcha-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px -10px rgba(102, 119, 68, 0.6);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--espresso);
+  color: var(--espresso);
+}
+
+.btn-outline:hover {
+  background: var(--espresso);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn-cream {
+  background: var(--cream);
+  color: var(--espresso);
+}
+
+.btn-cream:hover {
+  background: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 10px 22px;
+  font-size: 0.85rem;
+}
+
+.pill-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 999px;
+  color: var(--white);
+}
+
+.pill-tag.best-seller { background: var(--espresso); }
+.pill-tag.feature { background: var(--matcha); }
+.pill-tag.new { background: #b6743a; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

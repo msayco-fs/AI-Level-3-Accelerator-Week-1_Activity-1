@@ -1,0 +1,81 @@
+<section id="location" class="section location-section">
+  <div class="container">
+    <div class="section-head center">
+      <span class="section-tag">Visit Us</span>
+      <h2 class="section-heading">Find Your Corner Table</h2>
+      <p class="section-sub">
+        Tucked on a tree-lined street, Matcharap is an easy stop for your morning matcha or an
+        afternoon pastry break.
+      </p>
+    </div>
+
+    <div class="location-grid">
+      <div class="info-stack">
+        <div class="info-card">
+          <div class="info-card-head">
+            <span class="info-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="var(--matcha)" stroke-width="1.6"/><path d="M12 7v5l3.5 2" stroke="var(--matcha)" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>
+            </span>
+            <h3>Operating Hours</h3>
+          </div>
+          <ul class="hours-list">
+            @for (row of hours; track row.days) {
+              <li>
+                <span>{{ row.days }}</span>
+                <span class="hours-value">{{ row.hours }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-head">
+            <span class="info-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 1 1 14 0c0 5-7 11-7 11Z" fill="none" stroke="var(--matcha)" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" fill="var(--matcha)"/></svg>
+            </span>
+            <h3>Address</h3>
+          </div>
+          <p class="address-text">128 Willow Leaf Lane<br />Green Hollow, CA 94021</p>
+          <a class="map-link" href="https://maps.google.com" target="_blank" rel="noopener">
+            Get Directions
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-head">
+            <span class="info-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 10a11 11 0 0 1 16 0M7 13a7 7 0 0 1 10 0M10 16a3.2 3.2 0 0 1 4 0" stroke="var(--matcha)" stroke-width="1.6" fill="none" stroke-linecap="round"/><circle cx="12" cy="19" r="1.2" fill="var(--matcha)"/></svg>
+            </span>
+            <h3>Seating &amp; Amenities</h3>
+          </div>
+          <ul class="amenity-list">
+            @for (item of amenities; track item.label) {
+              <li>
+                <span class="amenity-dot" aria-hidden="true"></span>
+                {{ item.label }}
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+
+      <div class="map-visual" role="img" aria-label="Map showing Matcharap location on Willow Leaf Lane">
+        <div class="map-grid" aria-hidden="true"></div>
+        <div class="map-road road-h" aria-hidden="true"></div>
+        <div class="map-road road-v" aria-hidden="true"></div>
+        <div class="map-block block-a" aria-hidden="true"></div>
+        <div class="map-block block-b" aria-hidden="true"></div>
+        <div class="map-block block-c" aria-hidden="true"></div>
+        <div class="map-pin">
+          <span class="pin-dot"></span>
+          <span class="pin-pulse"></span>
+        </div>
+        <div class="map-label">Matcharap Bakery</div>
+        <a class="btn btn-cream btn-sm map-cta" href="https://maps.google.com" target="_blank" rel="noopener">
+          Open in Maps
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

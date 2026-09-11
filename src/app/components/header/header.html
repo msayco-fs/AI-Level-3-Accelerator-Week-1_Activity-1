@@ -1,0 +1,47 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="#home" (click)="closeMenu()">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="23" fill="var(--matcha)" />
+          <path
+            d="M24 10c-3 6-11 8-11 17a11 11 0 0 0 22 0c0-9-8-11-11-17Z"
+            fill="var(--cream)"
+          />
+          <path d="M24 16v18" stroke="var(--matcha)" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </span>
+      <span class="logo-text">
+        <strong>Matcharap</strong>
+        <small>Bakery &amp; Matcha Bar</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" [class.open]="isMenuOpen()" aria-label="Primary">
+      <ul>
+        @for (link of navLinks; track link.href) {
+          <li>
+            <a [href]="link.href" (click)="closeMenu()">{{ link.label }}</a>
+          </li>
+        }
+      </ul>
+      <a class="btn btn-primary order-cta mobile-only" href="#menu" (click)="closeMenu()">Order Online</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-primary order-cta desktop-only" href="#menu">Order Online</a>
+      <button
+        type="button"
+        class="menu-toggle"
+        (click)="toggleMenu()"
+        [class.active]="isMenuOpen()"
+        aria-label="Toggle navigation menu"
+        [attr.aria-expanded]="isMenuOpen()"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>

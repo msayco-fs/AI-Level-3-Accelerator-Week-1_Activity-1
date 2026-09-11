@@ -1,0 +1,128 @@
+.menu-section {
+  background: var(--bg);
+}
+
+.menu-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 44px;
+}
+
+.filter-chip {
+  border: 2px solid rgba(80, 44, 24, 0.15);
+  background: transparent;
+  color: var(--text-soft);
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 10px 22px;
+  border-radius: 999px;
+  transition: all 0.25s ease;
+}
+
+.filter-chip:hover {
+  border-color: var(--matcha);
+  color: var(--matcha);
+}
+
+.filter-chip.active {
+  background: var(--matcha);
+  border-color: var(--matcha);
+  color: var(--white);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.menu-card {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(80, 44, 24, 0.06);
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 40px -18px rgba(80, 44, 24, 0.35);
+}
+
+.menu-card-visual {
+  position: relative;
+  padding: 28px 24px 8px;
+  background: linear-gradient(160deg, var(--cream-soft) 0%, var(--beige) 100%);
+  display: flex;
+  justify-content: center;
+}
+
+.menu-card-visual .pill-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+.menu-icon {
+  width: 108px;
+  height: 108px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.menu-card-body {
+  padding: 20px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.menu-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.menu-card-top h3 {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.menu-price {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--matcha);
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+.menu-card-body p {
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+@media (max-width: 980px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+}
